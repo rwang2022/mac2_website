@@ -15,6 +15,7 @@ body {
 *:before,
 *:after {
     box-sizing: border-box;
+    font-size: large;
 }
 
 header {
@@ -160,22 +161,22 @@ fieldset {
 }
 
 .info-cards-section {
+    width: 30%;
+    min-width: 225px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
-    min-width: 200px;
-    width: 30%;
 }
 
 .card {
+    width: 30%;
+    min-width: 225px;
     background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     color: #ffffff;
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    min-width: 200px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
