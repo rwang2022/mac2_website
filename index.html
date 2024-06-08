@@ -159,7 +159,7 @@
                 <div style="display: inline-flex;">
                     <label for="sex-select">Sex:</label>
                     <select name="sex" id="sex-select">
-                        <option value="">--Please choose an option--</option>
+                        <option value="">--Choose an option--</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -170,7 +170,7 @@
                 <div style="display: inline-flex;">
                     <label for="age-select">Age:</label>
                     <select name="Age" id="age-select">
-                        <option value="">--Please choose an option--</option>
+                        <option value="">--Choose an option--</option>
                         <option value="<18">
                             <18< /option>
                         <option value="18-49">18-49</option>
@@ -182,7 +182,7 @@
 
             <br>
 
-            <fieldset style="width: 50%; margin: 1em;">
+            <fieldset style="width: 50%; margin: 1em; min-width: 250px; max-width: 700px;">
                 <legend style="font-size: 1.5em; text-align: center;">Choose your studies</legend>
                 <div>
                     <input type="checkbox" id="study1" name="study1">
@@ -194,8 +194,10 @@
                 </div>
             </fieldset>
 
+            <br>
+
             <textarea name="message" rows="4" placeholder="Any additional information..."
-                style="width: 50%;"></textarea>
+                style="width: 50%; max-width: 700px; min-width: 250px;"></textarea>
             <br>
             <button type="submit">Submit</button>
 
