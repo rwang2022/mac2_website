@@ -6,30 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participate in Memory and Cognition Studies</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
     <header>
         <h1>Memory, Aging, and Cognitive Control (MAC2)</h1>
         <p>Help us explore the mysteries of the mind</p>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#general-information">General Info</a></li>
+                <li><a href="#study-info">Study Info</a></li>
+                <li><a href="#footer">Sign Up</a></li>
+                <li><a href="address.html" style="color: orange">Address Info</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <section id="introduction">
+    <div class="container" id="introduction">
+        <section>
             <h1 class="section-title">Participate in Our Studies</h1>
-            <p>We are looking for participants aged 18 and up from diverse backgrounds to join our memory and
-                cognition
+            <div class="intro-banner" style="display: flex; justify-content: space-evenly;">
+                <!-- 585 x 360 -->
+                <img src="happypeople.webp" alt="Happy and diverse people" style="width: 45%;">
+                <!-- 1200 x 760 -->
+                <img src="happypeople2.jpg" alt="Happy and diverse people" style="width: 45%;">
+            </div>
+            <p>We are looking for participants aged 18 and up from diverse backgrounds to join our memory and cognition
                 studies. Our studies are safe, and we offer compensation for your time.
                 Discover how you can contribute to advancing our understanding of the brain!</p>
-            <p><span class="highlight">How to Sign Up:</span> <a href="#footer">Scroll to bottom</a>
+            <p><span class="highlight">How to Sign Up:</span> <a href="#footer">Click here to scroll to bottom</a></p>
         </section>
     </div>
 
-    <div class="container">
-        <section id="information">
+    <div class="container" id="general-information">
+        <section>
             <h1 class="section-title">General Information</h1>
 
             <div class="study-info">
@@ -41,20 +52,19 @@
                     <li>uncontrollable shaking</li>
                 </ul>
                 </p>
-                <p><span class="highlight">Compensation:</span> $20 per hour for community members, 1 research
-                    credit
+                <p><span class="highlight">Compensation:</span> $20 per hour for community members, 1 research credit
                     per hour for students.</p>
             </div>
         </section>
     </div>
 
 
-    <div class="container">
-        <section id="information">
+    <div class="container" id="study-info">
+        <section>
             <h1 class="section-title">Study Information</h1>
 
             <!-- Study #1 -->
-            <div class="study-info">
+            <div class="study-info" id="study1">
                 <div class="banner">
                     <div class="top-section">
                         <h2>Study 1: Gut and Brain Health</h2>
@@ -150,7 +160,7 @@
     </div>
 
     <footer id="footer" style="margin-top: 1em;">
-        <h1>Interested?</h1>
+        <h1>Interested? Sign up here.</h1>
         <form action="#" method="POST">
             <div>
                 <input type="text" name="name" placeholder="Your Name" required>

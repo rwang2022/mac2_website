@@ -5,10 +5,10 @@ body {
     background: linear-gradient(to right, #e0eafc, #cfdef3);
     margin: 0;
     padding: 0;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding-top: 50px;
 }
 
 *,
@@ -27,6 +27,47 @@ header {
 
 header h1 {
     margin: 0;
+}
+
+/* Navbar CSS */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #2C3E50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #1A73E8;
+    border-radius: 4px;
 }
 
 h1 {
@@ -125,7 +166,6 @@ fieldset {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    /* background: #f9f9f9; */
 }
 
 .banner {
@@ -230,4 +270,10 @@ fieldset {
 
 ol {
     margin: auto;
+}
+
+.intro-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
 }
