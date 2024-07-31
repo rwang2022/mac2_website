@@ -5,6 +5,13 @@
     font-size: large;
 }
 
+@media (max-width: 600px) {
+    body {
+        padding-top: 100px;
+        color: red;
+    }
+}
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -15,7 +22,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 50px; /* TODO ADJUST THIS */
+    padding-top: 50px;
+    /* TODO ADJUST THIS */
 }
 
 
