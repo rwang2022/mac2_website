@@ -12,6 +12,62 @@
     }
 }
 
+
+.container {
+    max-width: 90ch;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background: white;
+
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.carousel-container {
+    max-width: 90ch;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -223,7 +279,7 @@ fieldset {
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .info-cards-section {
@@ -240,7 +296,7 @@ fieldset {
     min-width: 250px;
     background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     color: #ffffff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
