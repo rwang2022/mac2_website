@@ -6,31 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participate in Memory and Cognition Studies</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js">
+    </script>
 </head>
 
 <body>
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#general-information1">General Info</a></li>
+            <li><a href="#study-info">Study Info</a></li>
+            <li><a href="#footer">Sign Up</a></li>
+            <li><a href="address.html" style="color: orange">Address Info</a></li>
+        </ul>
+    </nav>
+
     <header>
         <h1>Memory, Aging, and Cognitive Control (MAC2)</h1>
         <p>Help us explore the mysteries of the mind</p>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#general-information">General Info</a></li>
-                <li><a href="#study-info">Study Info</a></li>
-                <li><a href="#footer">Sign Up</a></li>
-                <li><a href="address.html" style="color: orange">Address Info</a></li>
-            </ul>
-        </nav>
     </header>
+
 
     <div class="container" id="introduction">
         <section>
             <h1 class="section-title">Participate in Our Studies</h1>
-            <div class="intro-banner" style="display: flex; justify-content: space-evenly;">
+            <div class="intro-banner">
                 <!-- 585 x 360 -->
-                <img src="happypeople.webp" alt="Happy and diverse people" style="width: 45%;">
+                <img src="happypeople.webp" alt="Happy and diverse people">
                 <!-- 1200 x 760 -->
-                <img src="happypeople2.jpg" alt="Happy and diverse people" style="width: 45%;">
+                <img src="happypeople2.jpg" alt="Happy and diverse people">
             </div>
             <p>We are looking for participants aged 18 and up from diverse backgrounds to join our memory and cognition
                 studies. Our studies are safe, and we offer compensation for your time.
@@ -39,7 +43,7 @@
         </section>
     </div>
 
-    <div class="container" id="general-information">
+    <div class="container" id="general-information1">
         <section>
             <h1 class="section-title">General Information</h1>
 
@@ -160,7 +164,7 @@
     </div>
 
     <footer id="footer" style="margin-top: 1em;">
-        <h1>Interested? Sign up here.</h1>
+        <h1>Sign up here.</h1>
         <form action="#" method="POST">
             <div>
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -172,9 +176,9 @@
             <br>
 
             <div>
-                <div style="display: inline-flex;">
+                <div style="display: inline-flex; padding: 20px">
                     <label for="sex-select">Sex:</label>
-                    <select name="sex" id="sex-select">
+                    <select name="sex" id="sex-select" style="min-width: 250px; padding: 5px">
                         <option value="">--Choose an option--</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -183,9 +187,9 @@
                     </select>
                 </div>
 
-                <div style="display: inline-flex;">
+                <div style="display: inline-flex; padding: 20px">
                     <label for="age-select">Age:</label>
-                    <select name="Age" id="age-select">
+                    <select name="Age" id="age-select" style="min-width: 250px; padding: 5px">
                         <option value="">--Choose an option--</option>
                         <option value="<18">
                             <18< /option>
@@ -212,8 +216,9 @@
 
             <br>
 
-            <textarea name="message" rows="4" placeholder="Any additional information..."
-                style="width: 50%; max-width: 700px; min-width: 250px;"></textarea>
+            <textarea name="message" rows="5" placeholder="Any additional information..."
+                style="width: 50%; max-width: 700px;"></textarea>
+            <br>
             <br>
             <button type="submit">Submit</button>
 

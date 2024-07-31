@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    font-size: large;
+}
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -8,66 +15,75 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 50px;
+    padding-top: 50px; /* TODO ADJUST THIS */
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    font-size: large;
-}
 
 header {
     background: #2C3E50;
     color: white;
-    padding: 20px 0;
     text-align: center;
+    padding: 20px
 }
 
 header h1 {
     margin: 0;
 }
 
+img {
+    width: 45%;
+    padding: 10px;
+}
+
 /* Navbar CSS */
 .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    /* Enable wrapping */
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #2C3E50;
     color: white;
-    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0;
+    padding: 0;
 }
 
 .navbar ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    /* Enable wrapping */
+    margin: 0;
+    padding: 0;
+    min-width: 60%;
+    /* Ensure ul takes full width */
 }
 
-.navbar ul li {
-    display: inline;
+.navbar li {
+    flex: 1 1 auto;
+    /* Flex-grow and flex-shrink to allow flexible width */
+    display: flex;
+    justify-content: center;
 }
 
-.navbar ul li a {
+.navbar a {
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
     color: white;
     text-decoration: none;
-    font-size: 1em;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    width: 100%;
+    /* Ensure a takes full width of li */
 }
 
-.navbar ul li a:hover {
+.navbar a:hover {
     background-color: #1A73E8;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 h1 {
@@ -115,6 +131,7 @@ form textarea {
     margin: 10px 0;
     border: 1px solid #ccc;
     width: auto;
+    min-width: 275px;
     border-radius: 4px;
 }
 
@@ -141,6 +158,7 @@ input[type='checkbox'] {
     font-size: inherit;
     cursor: pointer;
     width: 1.0em;
+    min-width: 1.0em;
     height: 1.0em;
     background: white;
     border-radius: 0.25em;
@@ -202,7 +220,7 @@ fieldset {
 
 .info-cards-section {
     width: 30%;
-    min-width: 225px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -211,7 +229,7 @@ fieldset {
 
 .card {
     width: 30%;
-    min-width: 225px;
+    min-width: 300px;
     background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     color: #ffffff;
     padding: 20px;
@@ -272,7 +290,30 @@ ol {
     margin: auto;
 }
 
+/* index.html happy old people */
+.intro-banner {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 .intro-banner img {
+    width: 45%;
+    min-width: 300px;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* address.html figures */
+.intro-banner figure {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    min-width: 300px;
+    width: 45%;
+}
+
+.intro-banner figure img {
     width: 100%;
     height: auto;
     border-radius: 16px;
