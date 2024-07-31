@@ -237,7 +237,7 @@ fieldset {
 
 .card {
     width: 30%;
-    min-width: 300px;
+    min-width: 250px;
     background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     color: #ffffff;
     padding: 20px;
