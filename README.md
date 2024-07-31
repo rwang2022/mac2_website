@@ -29,8 +29,10 @@ $ git checkout -b new-feature
 $ git checkout -b new-feature 
 
 # git add and commit as usual
-$ git add . && git commit -m "working on new_feature"
+$ git add . && git commit -m "working on new-feature"
 
-# 
-
+# push new-feature branch to the origin remote 
+# -u flag sets up the branch to track the remote branch
+# which makes future push/pull easier, by just using git push/pull without specifying branch
+$ git push -u origin new-feature
 ```
