@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js">
     </script>
+
+    <!-- optional, prevents the submit button from being pressed more than once -->
+    <script>
+        var submitButton = document.getElementById("submit_form");
+        var form = document.getElementById("email_form");
+        form.addEventListener("submit", function (e) {
+            setTimeout(function () {
+                submitButton.value = "Sending...";
+                submitButton.disabled = true;
+            }, 1);
+        });
+    </script>
+
     <style>
         @media (max-width: 650px) {
             body {
@@ -102,10 +115,12 @@
                         <p><span class="highlight">Additional Eligibility: </span>
                         <ul>
                             <li>must be right-handed</li>
-                            <li>have no MRI contraindications (metal objects in the body, claustrophobia, pregnancy)*</li>
+                            <li>have no MRI contraindications (metal objects in the body, claustrophobia, pregnancy)*
+                            </li>
                             <li>have no unremovable hair extensions or wigs</li>
                         </ul>
-                        <span style="font-style: italic;">*may not be necessary depending on which branch you choose</span>
+                        <span style="font-style: italic;">*may not be necessary depending on which branch you
+                            choose</span>
                         </p>
                         </p>
                     </div>
@@ -159,7 +174,8 @@
                         <p><span class="highlight">Additional Eligibility: </span>
                         <ul>
                             <li>must be right-handed</li>
-                            <li>have no MRI contraindications (metal objects in the body, claustrophobia, pregnancy)</li>
+                            <li>have no MRI contraindications (metal objects in the body, claustrophobia, pregnancy)
+                            </li>
                         </ul>
                         </p>
                     </div>
@@ -249,68 +265,122 @@
 
     <footer id="footer" style="margin-top: 1em;">
         <h1>Sign up here.</h1>
-        <form action="#" method="POST">
+
+        <form id="javascript_form">
             <div>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    placeholder="123-456-7890" style="width: 10rem" />
+                <input type="text" id="form_name" placeholder="Your Name" required>
+                <input type="email" id="form_email" placeholder="Your Email" required>
+                <input type="tel" id="form_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"
+                    style="width: 10rem" />
             </div>
 
+
+
             <br>
-
-            <!-- sex and age fields
-            <div>
-                <div style="display: inline-flex; padding: 20px">
-                    <label for="sex-select">Sex:</label>
-                    <select name="sex" id="sex-select" style="min-width: 250px; padding: 5px">
-                        <option value="">--Choose an option--</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                        <option value="Prefer not to say">Prefer not to say</option>
-                    </select>
-                </div>
-
-                <div style="display: inline-flex; padding: 20px">
-                    <label for="age-select">Age:</label>
-                    <select name="Age" id="age-select" style="min-width: 250px; padding: 5px">
-                        <option value="">--Choose an option--</option>
-                        <option value="under18">under 18</option>
-                        <option value="18-49">18-49</option>
-                        <option value="50-59">50-59</option>
-                        <option value="60+">60+</option>
-                    </select>
-                </div>
-            </div> -->
-
 
             <fieldset style="width: 50%; margin: 1em; min-width: 250px; max-width: 700px;">
                 <legend style="font-size: 1.5em; text-align: center;">Choose your studies</legend>
                 <div>
-                    <input type="checkbox" id="study1" name="study1">
-                    <label for="study2">Study 1: Gut and Brain Health</label>
+                    <input type="checkbox" value="Study 1: Gut and Brain Health">
+                    <label> Study 1: Gut and Brain Health</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="study2" name="study2">
-                    <label for="study1">Study 2: Understanding Memory Across Ages</label>
+                    <input type="checkbox" value="Study 2: Understanding Memory Across Ages">
+                    <label> Study 2: Understanding Memory Across Ages</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="study3" name="study3">
-                    <label for="study1">Study 3: Memory-Guided Eye Movements Across the Life-Span</label>
+                    <input type="checkbox" value="Study 3: Memory-Guided Eye Movements Across the Life-Span">
+                    <label> Study 3: Memory-Guided Eye Movements Across the Life-Span</label>
                 </div>
             </fieldset>
 
             <br>
 
-            <textarea name="message" rows="5" placeholder="Any additional information..."
+            <textarea id="form_extra_text" rows="5" placeholder="Any additional information..."
                 style="width: 50%; max-width: 700px;"></textarea>
             <br>
             <br>
-            <button type="submit">Submit</button>
+
+
+            <input type="submit" id="js_send" value="Send" />
+            <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
 
             <div style="margin-bottom: 4em"></div>
         </form>
+
+        <script>
+            //update this with your js_form selector
+            var form_id_js = "javascript_form";
+
+            var data_js = {
+                "access_token": "c2oayufxyc5ls31domzinwni"
+            };
+
+            function js_onSuccess() {
+                // remove this to avoid redirect
+                window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+            }
+
+            function js_onError(error) {
+                // remove this to avoid redirect
+                window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+            }
+
+            var sendButton = document.getElementById("js_send");
+
+            function js_send() {
+                sendButton.value = 'Sending…';
+                sendButton.disabled = true;
+                var request = new XMLHttpRequest();
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4 && request.status == 200) {
+                        js_onSuccess();
+                    } else
+                        if (request.readyState == 4) {
+                            js_onError(request.response);
+                        }
+                };
+
+                var subject = "Participant " + document.getElementById("form_name").value;
+                
+                var message = "Name: " + document.getElementById("form_name").value + "\n";
+                message += "Phone: " + document.getElementById("form_phone").value + "\n";
+                message += "Email: " + document.getElementById("form_email").value + "\n";
+                message += "Selected studies:\n"
+                const selectedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                selectedCheckboxes.forEach(checkbox => {
+                    message += "\t" + checkbox.value + "\n";
+                });
+                message += "Additional Information: " + document.getElementById("form_extra_text").value;
+
+                data_js['subject'] = subject;
+                data_js['text'] = message;
+                var params = toParams(data_js);
+
+                request.open("POST", "https://postmail.invotes.com/send", true);
+                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                request.send(params);
+
+                return false;
+            }
+
+            sendButton.onclick = js_send;
+
+            function toParams(data_js) {
+                var form_data = [];
+                for (var key in data_js) {
+                    form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+                }
+
+                return form_data.join("&");
+            }
+
+            var js_form = document.getElementById(form_id_js);
+            js_form.addEventListener("submit", function (e) {
+                e.preventDefault();
+            });
+        </script>
     </footer>
     </div>
     <a name="#end"></a>
